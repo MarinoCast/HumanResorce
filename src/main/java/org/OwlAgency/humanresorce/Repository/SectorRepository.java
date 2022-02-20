@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface SectorRepository extends JpaRepository<Sector, Long> {
-    List<Sector> findByNameLike(String name);
-    List<Sector> findByCity_Id(Long id);
+    List<Sector>findByNameLike(String name);
+    List<Sector> findByProvince_Id(Long provinceId);
 
 }
