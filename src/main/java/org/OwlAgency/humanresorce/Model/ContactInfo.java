@@ -25,7 +25,7 @@ public class ContactInfo {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="CITY_ID", nullable = false)
-    private City city;
+    private Province province;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="SECTOR_ID", nullable = false)

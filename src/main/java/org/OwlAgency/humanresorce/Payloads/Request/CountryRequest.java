@@ -6,10 +6,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
-public class CityRequest {
-    private  Long id;
+public class CountryRequest {
+    private Long id;
 
     @NotBlank
-    @Size(min = 5, max = 100)
+    @Size(min=3, max = 100)
     private String name;
+
 }

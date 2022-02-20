@@ -37,8 +37,6 @@ public class Employee {
     @Column(name = "CARREAR", length = 100, nullable = false)
     private String carrear;
 
-
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CONTACT_INFO_ID", nullable = false)
     private ContactInfo contactInfo;
