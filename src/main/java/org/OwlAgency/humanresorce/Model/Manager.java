@@ -20,10 +20,16 @@ public class Manager {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="MANAGER_ID", nullable = false)
+    @JoinColumn(name="EMPLOYEE_ID", nullable = false)
     private Employee manager;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="DEPARTAMENT_ID", nullable = false)
+    private Deparment deparment;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="CONTACT_INFO_ID", nullable = false)
     private ContactInfo contactInfo;
+
+
 }

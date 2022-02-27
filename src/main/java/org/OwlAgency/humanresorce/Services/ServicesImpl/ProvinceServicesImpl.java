@@ -19,4 +19,9 @@ public class ProvinceServicesImpl implements ProvinceServices {
         return provinceRepository.findAll();
     }
 
+    @Override
+    public Province find(Long id) {
+        return provinceRepository.findById(id).orElseThrow();
+    }
+
 }

@@ -3,14 +3,14 @@ package org.OwlAgency.humanresorce.Model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.OwlAgency.humanresorce.Model.Enums.SeguroMedico;
-
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @ToString(onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name="JOB_INFO")
+@Entity(name="REG_JOB_INFO")
 public class JobInfo {
     @Id
     @Column(name = "ID", nullable = false)
@@ -23,9 +23,9 @@ public class JobInfo {
     @Column(name ="CARGO", length = 100, nullable = false)
     private String cargo;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "SEGUROMEDICO", nullable = false)
-    private SeguroMedico seguroMedico;
+    @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name = "SEGURO_MEDICO_ID", nullable = false)
+    private SeguroMedico seguro;
 
 
 

@@ -3,9 +3,10 @@ package org.OwlAgency.humanresorce.Model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.OwlAgency.humanresorce.Model.Enums.Sex;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @ToString(onlyExplicitlyIncluded = true)
@@ -30,9 +31,10 @@ public class Employee {
     @Column(name = "EDAD", length = 25, nullable = false)
     private int edad;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "SEX", nullable = false)
-    private Sex sex;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SEX_ID", nullable = false)
+    private Sex gender;
 
     @Column(name = "CARREAR", length = 100, nullable = false)
     private String carrear;
@@ -40,4 +42,8 @@ public class Employee {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CONTACT_INFO_ID", nullable = false)
     private ContactInfo contactInfo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="JOB_INFO_ID", nullable = false)
+    private JobInfo jobInfo;
 }

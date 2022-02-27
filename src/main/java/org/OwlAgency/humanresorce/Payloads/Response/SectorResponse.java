@@ -20,7 +20,6 @@ public class SectorResponse {
         this.city = new ProvinceResponse(sector.getProvince());
     }
 
-
     public static SectorResponse mapWithProvince(Sector sector) {
         SectorResponse response = new SectorResponse(sector);
         response.setProvince(new ProvinceResponse(sector.getProvince()));
