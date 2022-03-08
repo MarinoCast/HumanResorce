@@ -16,7 +16,7 @@ import java.util.Set;
 public class Employee {
     @Id
     @Column(name = "ID", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "NAME", length = 100, nullable = false)
