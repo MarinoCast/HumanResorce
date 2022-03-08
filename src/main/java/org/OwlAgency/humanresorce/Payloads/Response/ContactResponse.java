@@ -9,17 +9,14 @@ public class ContactResponse {
     private String phone;
     private String street;
     private String number;
-    private ProvinceResponse city;
-    private SectorResponse municipality;
+    private SectorResponse sector;
 
     public ContactResponse(ContactInfo contact){
         this.id = contact.getId();
         this.phone = contact.getPhone();
         this.street = contact.getStreet();
         this.number = contact.getNumber();
-        this.city = new ProvinceResponse(contact.getProvince());
-        this.municipality = new SectorResponse(contact.getSector());
-
+        this.sector = new SectorResponse(contact.getSector());
     }
 
 }

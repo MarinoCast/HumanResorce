@@ -13,11 +13,13 @@ public class JobInfoResponse {
     private Long id;
     private int salary;
     private String cargo;
+    private SeguroMedicoResponse seguro;
 
     public JobInfoResponse(JobInfo jobInfo){
         this.id = jobInfo.getId();
         this.salary = jobInfo.getSalary();
         this.cargo = jobInfo.getCargo();
+        this.seguro = new SeguroMedicoResponse(jobInfo.getSeguro());
     }
 
 }

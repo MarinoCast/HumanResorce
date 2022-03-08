@@ -22,8 +22,8 @@ public class Deparment {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "REG_DOGS_OWNERS",
-            joinColumns = @JoinColumn(name = "DOG_ID"),
+            name = "REG_MANAGER_DEPARMENT",
+            joinColumns = @JoinColumn(name = "EMPLOYEE_ID"),
             inverseJoinColumns = @JoinColumn(name = "MANAGER_ID"))
     private List<Employee> manager;
 }

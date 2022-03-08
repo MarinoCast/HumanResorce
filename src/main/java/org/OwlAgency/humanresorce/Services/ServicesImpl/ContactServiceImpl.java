@@ -27,14 +27,13 @@ public class ContactServiceImpl implements ContactService {
     @Override
     public ContactInfo create(ContactRequest contactRequest) {
         ContactInfo contactInfo = new ContactInfo();
-        contactInfo.setNumber(contactRequest.getNumber());
         contactInfo.setPhone(contactRequest.getPhone());
         contactInfo.setStreet(contactRequest.getStreet());
-        //Province
-        Province province = provinceServices.find(contactRequest.getId());
-        contactInfo.setProvince(province);
-        //Sector
-        Sector sector = sectorServices.find(contactRequest.getId());
+        contactInfo.setNumber(contactRequest.getNumber());
+
+        //SECTOR REQUEST
+        Sector sector = sectorServices.find(contactRequest.getSectorId());
+
         contactInfo.setSector(sector);
         contactRepository.save(contactInfo);
         return contactInfo;
@@ -57,8 +56,7 @@ public class ContactServiceImpl implements ContactService {
         contactInfo.setPhone(request.getPhone());
         contactInfo.setStreet(request.getStreet());
         //Province
-        Province province = provinceServices.find(request.getId());
-        contactInfo.setProvince(province);
+
         //Sector
         Sector sector = sectorServices.find(request.getId());
         contactInfo.setSector(sector);

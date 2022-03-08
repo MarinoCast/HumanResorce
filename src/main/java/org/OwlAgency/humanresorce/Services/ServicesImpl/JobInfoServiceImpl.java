@@ -20,12 +20,12 @@ public class JobInfoServiceImpl implements JobInfoService {
     private SeguroMedicoService seguroMedicoService;
 
     @Override
-    public JobInfo create(JobInfoRequest jobInfoRequest) {
+    public JobInfo create(JobInfoRequest request) {
         JobInfo jobInfo = new JobInfo();
-        jobInfo.setCargo(jobInfoRequest.getCargo());
-        jobInfo.setSalary(jobInfoRequest.getSalary());
+        jobInfo.setCargo(request.getCargo());
+        jobInfo.setSalary(request.getSalary());
         //SeguroMedico
-        SeguroMedico seguro = seguroMedicoService.findBy(jobInfo.getId());
+        SeguroMedico seguro = seguroMedicoService.create(request.getSeguro());
         jobInfo.setSeguro(seguro);
         jobInfoRepository.save(jobInfo);
         return jobInfo;

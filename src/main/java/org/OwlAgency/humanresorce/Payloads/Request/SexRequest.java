@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
-public class SectorRequest {
+public class SexRequest {
     private Long id;
 
     @NotBlank

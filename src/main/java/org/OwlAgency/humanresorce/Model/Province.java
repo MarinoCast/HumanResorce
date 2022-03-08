@@ -20,8 +20,6 @@ public class Province {
     @Column(name="NAME", length = 100, nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "province", fetch = FetchType.LAZY)
-    private Set<ContactInfo> contactInfos;
 
     @OneToMany(mappedBy = "province", fetch = FetchType.LAZY)
     private Set<Sector> sector;

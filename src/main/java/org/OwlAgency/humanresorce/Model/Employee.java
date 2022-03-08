@@ -29,15 +29,14 @@ public class Employee {
     private String personalId;
 
     @Column(name = "EDAD", length = 25, nullable = false)
-    private int edad;
-
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SEX_ID", nullable = false)
-    private Sex gender;
+    private String edad;
 
     @Column(name = "CARREAR", length = 100, nullable = false)
     private String carrear;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SEX_ID", nullable = false)
+    private Sex sex;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CONTACT_INFO_ID", nullable = false)

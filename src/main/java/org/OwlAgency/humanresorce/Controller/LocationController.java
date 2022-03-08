@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*",maxAge = 3600)
 @RestController
-@RequestMapping("api/Location")
+@RequestMapping("api/location")
 public class LocationController {
     @Autowired
     private SectorServices sectorService;
@@ -33,7 +33,7 @@ public class LocationController {
         return ResponseEntity.ok(provinces);
     }
 
-    @GetMapping(value = "/provice/municipality",produces = "application/json")
+    @GetMapping(value = "/provice/municipality/",produces = "application/json")
     public ResponseEntity<List<SectorResponse>>findAllMunicipalities(){
         List<SectorResponse>sectors= this.sectorService.findAll().stream().map(SectorResponse::new).collect(Collectors.toList());
         return ResponseEntity.ok(sectors);
